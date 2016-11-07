@@ -11,7 +11,8 @@ def grafico_aceleracao(filename, nome):
     vooY = dados["y"]
     vooZ = dados["z"]
     voo_resultante = (vooX**2 + vooY**2 + vooZ**2)**(1/2)
-    plt.plot(voo_resultante)
+    tempo = dados["time"]
+    plt.plot(tempo,voo_resultante)
     plt.title(nome)
     plt.ylabel(u"Aceleração Resultante")
     plt.xlabel("Tempo")

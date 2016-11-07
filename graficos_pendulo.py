@@ -8,7 +8,8 @@ import math
 def grafico_gforce(filename, nome):
     dados = pd.read_csv(filename, sep=";")
     pend_resultante = dados["gforce"]
-    plt.plot(pend_resultante)
+    tempo = dados["time"]
+    plt.plot(tempo, pend_resultante)
     plt.title(nome)
     plt.ylabel(u"Força-G Resultante")
     plt.xlabel("Tempo")
