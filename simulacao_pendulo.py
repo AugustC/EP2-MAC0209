@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import math
 
 g = 10
 
@@ -12,7 +13,7 @@ def euler_pendulo_semresistencia(theta0, v0, L, step, n):
     resultV.append((0, v))
     for i in range(n):
         theta = thetaN + v*step/L
-        v = v - thetaN*step*g/(L**2)
+        v = v - thetaN*step*g/(L)
         thetaN = theta
         resultTheta.append((step*i, theta))
         resultV.append((step*i, v))
@@ -27,7 +28,7 @@ def euler_cromer_pendulo_semresistencia(theta0, v0, L, step, n):
     resultTheta.append((0, theta))
     resultV.append((0, v))    
     for i in range(n):
-        v = v - theta*step*g/(L**2)
+        v = v - theta*step*g/(L)
         theta = theta+ v*step/L
         resultTheta.append((step*i, theta))
         resultV.append((step*i, v))
