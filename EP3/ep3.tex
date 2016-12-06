@@ -7,38 +7,42 @@
 \usepackage{float}
 \usepackage{caption}
 
-\author{Augusto CÈsar - 8941234 \\Paulo Ara˙jo - 8941112\\Eric Lee - 7557095}
-\title{MAC0209 Modelagem e SimulaÁ„o \\ EP3}
+\author{Augusto C√©sar - 8941234 \\Paulo Ara√∫jo - 8941112\\Eric Lee - 7557095}
+\title{MAC0209 Modelagem e Simula√ß√£o \\ EP3}
 
 \begin{document}
 \maketitle{}
 \paragraph{}
-ExercÌcio 14.5 do livro "An Introduction to Computer Simulation Methods Applications to Physical System"
+Exerc√≠cio 14.5 do livro "An Introduction to Computer Simulation Methods Applications to Physical System"
 \begin{enumerate}
   \renewcommand{\theenumi}{\alph{enumi}}
 \item                           % a
+  O gr√°fico do diagrama fundamental pode ser usado para entender a rela√ß√£o do vluxo (velocidade) com a densidade (tr√¢nsito) em um sistema de tr√°fego.
+  Pode-se notar que quanto menor o fluxo, o sistema tende a ter uma maior densidade, assim como uma velocidade muito baixa pode causar um n√£o aproveitamento do espa√ßo. Sendo assim, observando o diagrama fundamental podemos obter onde pode-se encontrar um ponto √≥timo para que o sistema entre em equil√≠brio.
+  Os engarrafamentos ocorrem quando temos uma densidade maior que a densidade no ponto m√°ximo do gr√°fico (ponto onde temos a m√°xima capacidade de carros). Ap√≥s esse ponto, o fluxo e a velocidade passam a diminuir devido ao engarafamento.
 \item                           % b
+  Para obtermos resultados independentes do comprimento da estrada, temos que ter um comprimento m√≠nimo do dobro de n√∫mero de carros.
 \item                           % c
   
 \item                           % d
   $v_{max} = 1 : Flow \approx 0.09$ \\
-  Muito espaÁo entre os carros, poucos engarrafamentos. Flow muito pequeno, demora muito pra um carro
+  Muito espa√ßo entre os carros, poucos engarrafamentos. Flow muito pequeno, demora muito pra um carro
   atravessar a rodovia.
   
   $v_{max} = 2 : Flow \approx 0.246$\\
-  Pouco espaÁo entre os carros, durante o percurso surgem alguns engarrafamentos bem pequenos. A velocidade dos carros È quase constante durante toda a rodovia. O flow È bem grande se comparado a travessia com $v_{max} = 1$, demora pouco tempo pros carros atravessarem a rodovia.
+  Pouco espa√ßo entre os carros, durante o percurso surgem alguns engarrafamentos bem pequenos. A velocidade dos carros √© quase constante durante toda a rodovia. O flow √© bem grande se comparado a travessia com $v_{max} = 1$, demora pouco tempo pros carros atravessarem a rodovia.
 
   $v_{max} = 5 : Flow \approx 0.293$\\
-  Espaco entre os carros variados, i. e., alguns carros muito prÛximos enquanto outros est„o muito distantes. Surgem v·rios engarrafamentos grandes, enquanto a velocidade e o flow ficam variando muito.
+  Espaco entre os carros variados, i. e., alguns carros muito pr√≥ximos enquanto outros est√£o muito distantes. Surgem v√°rios engarrafamentos grandes, enquanto a velocidade e o flow ficam variando muito.
 \item                           % e
   $p = 0.2$ \\
-  Velocidade dos carros quase constante, poucos engarrafamentos surgem durante o percurso. O flow È bem alto.
+  Velocidade dos carros quase constante, poucos engarrafamentos surgem durante o percurso. O flow √© bem alto.
 
   $p = 0.8$ \\
-  Velocidade dos carros varia muito, muitos engarrafamentos surgem durante o percurso. O flow È quase a metade de quando $p = 0.2$.
+  Velocidade dos carros varia muito, muitos engarrafamentos surgem durante o percurso. O flow √© quase a metade de quando $p = 0.2$.
 \item                           % f
-  Quando adicionamos as rampas de entrada e saÌda na rodovia, podemos perceber um pequeno engarrafamento surgindo quando o carro que deseja sair naquela rampa est· prÛximo de l· e comeÁa a diminuir a sua velocidade. Esse engarrafamento acaba sendo proporcional a velocidade m·xima dos carros, i. e., quando os carros est„o muito r·pidos o engarrafamento È bem grande, diferentemente de quando a velocidade m·xima da rodovia È menor, onde surgem engarrafamentos pequenos e por menos tempo. \\
-  Podemos perceber o efeito resultante de ter colocado essas rampas usando a probabilidade de um carro diminuir a sua velocidade igual a 0. Sendo assim, a velocidade dos carros e o flow da rodovia sÛ poder„o ser mudados pelo efeito das rampas. Diferente de quando n„o tinhamos as rampas, os carros n„o possuem mais um movimento constante (o que era percebido quando usavamos $p = 0$ sem as rampas). 
+  Quando adicionamos as rampas de entrada e sa√≠da na rodovia, podemos perceber um pequeno engarrafamento surgindo quando o carro que deseja sair naquela rampa est√° pr√≥ximo de l√° e come√ßa a diminuir a sua velocidade. Esse engarrafamento acaba sendo proporcional a velocidade m√°xima dos carros, i. e., quando os carros est√£o muito r√°pidos o engarrafamento √© bem grande, diferentemente de quando a velocidade m√°xima da rodovia √© menor, onde surgem engarrafamentos pequenos e por menos tempo. \\
+  Podemos perceber o efeito resultante de ter colocado essas rampas usando a probabilidade de um carro diminuir a sua velocidade igual a 0. Sendo assim, a velocidade dos carros e o flow da rodovia s√≥ poder√£o ser mudados pelo efeito das rampas. Diferente de quando n√£o tinhamos as rampas, os carros n√£o possuem mais um movimento constante (o que era percebido quando usavamos $p = 0$ sem as rampas). 
 \item                           % g
 \item                           % h
   
