@@ -25,7 +25,10 @@ public class Freeway implements Drawable {
   public double[] distribution;
   public int roadLength;
   public int numberOfCars;
-  public int maximumVelocity;
+  public int maximumVelocity0, maximumVelocity1;
+  public int[] maximumVelocity;
+  public int[] classes;        // Vehicles classes, 0 for car and 1 for truck
+  public double classp;
   public double p;             // probability of reducing velocity
   private CellLattice road;
   public double flow;
@@ -40,16 +43,23 @@ public class Freeway implements Drawable {
     x = new int[2][numberOfCars];
     xtemp = new int[2][numberOfCars]; // used to allow parallel updating
     v = new int[numberOfCars];
+    classes = new int[numberOfCars];
+    maximumVelocity = new int[2];
+    maximumVelocity[0] = maximumVelocity0;
+    maximumVelocity[1] = maximumVelocity1;
     spaceTime.resizeLattice(roadLength, 100);
     road = new CellLattice(roadLength, 2);
     road.setIndexedColor(0, java.awt.Color.RED);
     road.setIndexedColor(1, java.awt.Color.GREEN);
+    road.setIndexedColor(2, java.awt.Color.BLUE);
     spaceTime.setIndexedColor(0, java.awt.Color.RED);
     spaceTime.setIndexedColor(1, java.awt.Color.GREEN);
+    spaceTime.setIndexedColor(2, java.awt.Color.BLUE);
     int d = roadLength/numberOfCars;
     x[0][0] = 0;
     x[1][0] = -1;
-    v[0] = maximumVelocity;
+    classes[0] = 0;
+    v[0] = maximumVelocity[classes[0]];
     for(int i = 1;i<numberOfCars;i++) {
       x[0][i] = x[0][i-1]+d;
       x[1][i] = -1;
@@ -58,6 +68,10 @@ public class Freeway implements Drawable {
       } else {
         v[i] = 1;
       }
+      if(Math.random()<classp)
+    	  classes[i] = 1;
+      else
+    	  classes[i] = 0;
     }
     flow = 0;
     steps = 0;
@@ -73,7 +87,7 @@ public class Freeway implements Drawable {
       xtemp[1][i] = x[1][i];
     }
     for(int i = 0;i<numberOfCars;i++) {
-      if(v[i]<maximumVelocity) {
+      if(v[i]<maximumVelocity[classes[i]]) {
         v[i]++;                                   // acceleration
       }
       int d = xtemp[0][(i+1)%numberOfCars]-xtemp[0][i]; // distance between cars
@@ -164,10 +178,13 @@ public class Freeway implements Drawable {
     }
     road.setBlock(0, 0, new byte[roadLength][2]);
     for(int i = 0;i<numberOfCars;i++) {
+    	int b;
+    	if (classes[i] == 0) b = 1;
+    	else b = 2;
     	if (x[0][i] < 0)
-    		road.setValue(x[1][i], 0, (byte) 1);
+    		road.setValue(x[1][i], 0, (byte)b);
     	else
-    		road.setValue(x[0][i], 1, (byte) 1);
+    		road.setValue(x[0][i], 1, (byte)b);
     }
     road.draw(panel, g);
     g.drawString("Number of Steps = "+steps, 10, 20);
