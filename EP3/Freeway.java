@@ -34,6 +34,8 @@ public class Freeway implements Drawable {
   public double flow;
   public int steps, t;
   public int scrollTime = 100; // number of time steps before scrolling space-time diagram
+  public int[] gaps;
+  public int[] velocities;
 
   /**
    * Initializes arrays and starting configuration of cars.
@@ -82,6 +84,8 @@ public class Freeway implements Drawable {
    * Does one time step
    */
   public void step() {
+    gaps = new int[roadLength];
+    velocities = new int[maximumVelocity[0]];
     for(int i = 0;i<numberOfCars;i++) {
       xtemp[0][i] = x[0][i];
       xtemp[1][i] = x[1][i];
@@ -140,6 +144,9 @@ public class Freeway implements Drawable {
     }
     steps++;
     computeSpaceTimeDiagram();
+
+    for (int i = 0; i < roadLength; i++)
+      velocities[v[i]]++;
   }
 
   public void computeSpaceTimeDiagram() {
