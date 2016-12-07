@@ -17,14 +17,15 @@ Exercício 14.5 do livro "An Introduction to Computer Simulation Methods Applicat
 \begin{enumerate}
   \renewcommand{\theenumi}{\alph{enumi}}
 \item                           % a
-  O gráfico do diagrama fundamental pode ser usado para entender a relação do vluxo (velocidade) com a densidade (trânsito) em um sistema de tráfego.
-  Pode-se notar que quanto menor o fluxo, o sistema tende a ter uma maior densidade, assim como uma velocidade muito baixa pode causar um não aproveitamento do espaço. Sendo assim, observando o diagrama fundamental podemos obter onde pode-se encontrar um ponto ótimo para que o sistema entre em equilíbrio.
+  O gráfico do diagrama fundamental pode ser usado para entender a relação do vluxo (velocidade) com a densidade (trânsito) em um sistema de tráfego.\\
+  Pode-se notar que quanto menor o fluxo, o sistema tende a ter uma maior densidade, assim como uma velocidade muito baixa pode causar um não aproveitamento do espaço. Sendo assim, observando o diagrama fundamental podemos obter onde pode-se encontrar um ponto ótimo para que o sistema entre em equilíbrio.\\
   Os engarrafamentos ocorrem quando temos uma densidade maior que a densidade no ponto máximo do gráfico (ponto onde temos a máxima capacidade de carros). Após esse ponto, o fluxo e a velocidade passam a diminuir devido ao engarafamento.
   
 \item                           % b
   Para obtermos resultados independentes do comprimento da estrada, temos que ter um comprimento mínimo do dobro de número de carros.
   
 \item                           % c
+  Resolvido no código-fonte.
   
 \item                           % d
   $v_{max} = 1 : Flow \approx 0.09$ \\
@@ -49,7 +50,7 @@ Exercício 14.5 do livro "An Introduction to Computer Simulation Methods Applicat
   Podemos perceber o efeito resultante de ter colocado essas rampas usando a probabilidade de um carro diminuir a sua velocidade igual a 0. Sendo assim, a velocidade dos carros e o flow da rodovia só poderão ser mudados pelo efeito das rampas. Diferente de quando não tinhamos as rampas, os carros não possuem mais um movimento constante (o que era percebido quando usavamos $p = 0$ sem as rampas).
   
 \item                           % g
-  O comportamento em duas vias em relação à uma via tem impacto significativo no fluxo geral, pois, junto à mudança, é inserido um novo componente chamado ultrapassagem.
+  O comportamento em duas vias em relação à uma via tem impacto significativo no fluxo geral, pois, junto à mudança, é inserido um novo componente chamado ultrapassagem.\\
   A ultrapassagem permite que veículos de maior velocidade possam transpor as vias sem haver uma limitação estabelecida pelo veículo adiante, havendo condições (desejo de ultrapassar e espaço para ultrapassagem).
   
 \item                           % h
